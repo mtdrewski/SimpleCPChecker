@@ -29,13 +29,13 @@ int main(){
 
 	FOR(i,1,50000){
 		cout<<i<<"\n";
-		system("./gen >_in");
+		system("./bin/gen > files/_in");
 		
-		system("./brut <_in >_brout");
-		system("./wzor <_in >_wzout");
+		system("./bin/brut < files/_in > files/_brout");
+		system("./bin/wzor < files/_in > files/_wzout");
 		
-		if(system("diff _wzout _brout")!=0){
-			system("cat _in");
+		if(system("diff files/_wzout files/_brout")!=0){
+			system("cat files/_in");
 			cout<<"NIE DZIALA";
 			return 0;
 		}
