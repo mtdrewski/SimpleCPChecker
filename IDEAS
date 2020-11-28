@@ -1,0 +1,5 @@
+1. Proper makefile.
+2. Additional header file for geneator for value generating under target constraints.
+3. Better random number generator.
+4. Differentiate between checking your code with anothere code but with worse 
+time complexity and checking whether if your output is correct.
