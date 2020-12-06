@@ -30,34 +30,8 @@ int main(){
 	IOSWORK;
 	
 	srand(time(0));
-	
-	int z = 1;
-	cout<<z<<"\n";
-	while(z--){
-		int n=20;
-		int m=100;
-		cout<<n<<" "<<m<<"\n";
+	int l=rand()%100000;
 
-		set<PI> pary;
-		FOR(i,1,n-1)
-			pary.IN({i,i+1});
-		while(SIZE(pary)<m){
-			int t1=rand()%n+1;
-			int t2=rand()%n+1;
-			while(t2==t1)
-				t2=rand()%n+1;
-			pary.IN({min(t1,t2),max(t1,t2)});
-		}
-		for(auto x: pary)
-			cout<<x.ST<<" "<<x.ND<<" "<<rand()%10+1<<"\n"; 
-		int s=7;
-		cout<<s<<"\n";
-		set<int> term;
-		while(SIZE(term)<s)
-			term.IN(rand()%n+1);
-		for(auto x:term)
-			cout<<x<<" ";
-		cout<<"\n";
-	}
+	cout<<l<<" "<<rand()%100000+l+1<<"\n";
 	return 0;
 }
