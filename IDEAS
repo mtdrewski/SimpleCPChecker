@@ -4,3 +4,11 @@
 4. Differentiate between checking your code with anothere code but with worse 
 time complexity and checking whether if your output is correct.
 5. Give ability to set up time/memory constraints
+
+
+skryptem w bashu do sprawdzenia rozwiązania o nazwie "kol" na testach z folderu "big":
+for t in ele_tests/in/*.in; do
+echo $t
+o=${t%.in}.out
+diff $o <(./ele < $t) || break
+done

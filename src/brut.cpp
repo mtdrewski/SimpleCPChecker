@@ -21,11 +21,66 @@ typedef pair<double,double> PD;
 #define ND second
 #define INF 2000000011
 #define MOD 1000000007
- 
-#define MAXS 10000000
+
+#define MAXS 300010
+
+pair<long,long> arr[MAXS];
+int n;
+
+int detonate(int mask){
+    
+    VI det(n);
+    queue<int> toDet;
+    REP(i,n){
+        if((1<<i)&mask){
+            toDet.push(i);
+            det[i]=1;
+        }
+    }
+
+    while(!toDet.empty()){
+        int x=toDet.front();
+        toDet.pop();
+        
+        LL r1=arr[x].ST+arr[x].ND;
+        int p=x+1;
+        while(p<n&&arr[p].ST<=r1){
+            if(!det[p]){
+                toDet.push(p);
+                det[p]=1;
+            }
+            p++;
+        }
+        
+        p=x-1;
+        r1=arr[x].ST-arr[x].ND;
+        while(p>=0&&arr[p].ST>=r1){
+            if(!det[p]){
+                toDet.push(p);
+                det[p]=1;
+            }
+            p--;
+        }
+    }
+
+    int m1=0;
+    REP(i,n){
+        if(det[i])
+            m1|=1<<i;
+    }
+    return m1;
+}
 
 int main(){
+
+    ios::sync_with_stdio(0);cin.tie(0);
+
+    cin>>n;
+    REP(i,n)
+        cin>>arr[i].ST>>arr[i].ND;
     
-    ios::sync_with_stdio(0); cin.tie(0);
-    cout<<"Hello World";
+    set<int> wyn;
+    REP(i,1<<n)    //brut, brutow, detonujemy odpowiednia maske elementow
+        wyn.insert(detonate(i));
+    cout<<SIZE(wyn)<<"\n";
 }
