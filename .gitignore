@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# srccode files
+wzor.cpp
+brut.cpp

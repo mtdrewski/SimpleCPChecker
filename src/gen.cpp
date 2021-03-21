@@ -11,15 +11,20 @@ int main(int argc, char *argv[]){
 	oi::Random randGen;
 	randGen.setSeed(clock());
 	
-	int n=16;
-	cout<<n<<"\n";
-	set<long long> bomby;
-	
-	while((int)(bomby.size())<n)
-		bomby.insert(randGen.randUInt());
-	for(auto x:bomby)
-		cout<<x<<" "<<randGen.randUInt()<<"\n";
-
-
+	int z=1;
+	cout<<z<<"\n";
+	while(z--){
+		int n=400,m=400;
+		cout<<n<<" "<<m<<"\n";
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				if(randGen.rand()%3==0)
+					cout<<"x";
+				else
+					cout<<".";
+			}
+			cout<<"\n";
+		}
+	}
 	return 0;
 }
