@@ -1,6 +1,5 @@
 # SimpleCPChecker
-Automatized processing/verifying for simple Competitive Programming-esque
-codes/problems with DIY generator and some other fancy stuff
+Automatized verifying for simple Competitive Programming-esque problems with DIY generator.
 
 Makefile commands:
 - make all -> create binaries from all the sources
